@@ -5,15 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Morten Bilgrav Mathiasen · Board Profile</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Instrument+Serif:ital@0;1&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
 <style>
   :root {
-    --ink: #0e0e0d;
-    --paper: #f5f2ec;
-    --warm: #c8a96e;
-    --muted: #8a8278;
-    --rule: rgba(14,14,13,0.12);
-    --accent: #2b3a52;
+    --ink: #0F0F0E;
+    --paper: #F4F4F2;
+    --cool: #4F7396;
+    --muted: #767672;
+    --rule: rgba(15,15,14,0.10);
+    --accent: #1A2B38;
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -23,21 +23,10 @@
   body {
     background: var(--paper);
     color: var(--ink);
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: 18px;
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    font-size: 17px;
     line-height: 1.7;
     overflow-x: hidden;
-  }
-
-  /* Grain overlay */
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
-    pointer-events: none;
-    z-index: 1000;
-    opacity: 0.4;
   }
 
   /* Header */
@@ -74,23 +63,26 @@
   .eyebrow {
     font-family: 'DM Mono', monospace;
     font-size: 11px;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--warm);
+    color: var(--cool);
     font-weight: 300;
   }
 
   h1 {
     font-size: clamp(3.5rem, 6vw, 6rem);
-    font-weight: 300;
+    font-weight: 700;
     line-height: 1.0;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.03em;
     margin-top: 24px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
   }
 
   h1 em {
+    font-family: 'Instrument Serif', serif;
     font-style: italic;
-    color: var(--warm);
+    font-weight: 400;
+    color: var(--cool);
   }
 
   .title-block {
@@ -114,11 +106,12 @@
   }
 
   .header-tagline {
-    font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+    font-family: 'Instrument Serif', serif;
+    font-size: clamp(1.1rem, 1.8vw, 1.35rem);
     font-style: italic;
-    font-weight: 300;
+    font-weight: 400;
     color: var(--muted);
-    line-height: 1.5;
+    line-height: 1.6;
     max-width: 420px;
     margin-bottom: 60px;
   }
@@ -126,32 +119,34 @@
   .header-stats {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2px;
+    gap: 1px;
+    background: var(--rule);
     border: 1px solid var(--rule);
   }
 
   .stat {
     padding: 24px 20px;
-    border: 1px solid var(--rule);
-    transition: background 0.3s;
+    background: var(--paper);
+    transition: background 0.25s;
   }
 
-  .stat:hover { background: rgba(200,169,110,0.06); }
+  .stat:hover { background: rgba(79,115,150,0.05); }
 
   .stat-num {
-    font-size: 2.4rem;
-    font-weight: 300;
+    font-size: 2.2rem;
+    font-weight: 600;
     line-height: 1;
     color: var(--accent);
+    letter-spacing: -0.02em;
   }
 
   .stat-label {
     font-family: 'DM Mono', monospace;
     font-size: 10px;
     text-transform: uppercase;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.13em;
     color: var(--muted);
-    margin-top: 4px;
+    margin-top: 5px;
   }
 
   /* Nav */
@@ -194,7 +189,7 @@
     font-size: 11px;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--ink);
+    color: var(--muted);
     text-decoration: none;
     position: relative;
     transition: color 0.2s;
@@ -207,11 +202,11 @@
     left: 0;
     width: 0;
     height: 1px;
-    background: var(--warm);
+    background: var(--cool);
     transition: width 0.3s;
   }
 
-  .nav-links a:hover { color: var(--warm); }
+  .nav-links a:hover { color: var(--ink); }
   .nav-links a:hover::after { width: 100%; }
 
   /* Sections */
@@ -235,14 +230,14 @@
   .section-num {
     font-family: 'DM Mono', monospace;
     font-size: 11px;
-    color: var(--warm);
+    color: var(--cool);
     letter-spacing: 0.15em;
   }
 
   h2 {
-    font-size: clamp(2rem, 3.5vw, 3rem);
-    font-weight: 300;
-    letter-spacing: -0.02em;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 600;
+    letter-spacing: -0.025em;
     line-height: 1.1;
   }
 
@@ -261,15 +256,6 @@
     margin-bottom: 24px;
   }
 
-  .about-text p:first-child::first-letter {
-    font-size: 4rem;
-    line-height: 0.8;
-    float: left;
-    margin-right: 10px;
-    margin-top: 8px;
-    color: var(--warm);
-    font-style: italic;
-  }
 
   .pillars {
     display: flex;
@@ -279,22 +265,22 @@
 
   .pillar {
     border: 1px solid var(--rule);
-    padding: 20px 24px;
-    transition: all 0.3s;
+    border-left: 3px solid transparent;
+    padding: 18px 24px;
+    transition: border-left-color 0.25s, background 0.25s;
     cursor: default;
   }
 
   .pillar:hover {
-    background: var(--accent);
-    color: var(--paper);
-    border-color: var(--accent);
-    transform: translateX(8px);
+    border-left-color: var(--cool);
+    background: rgba(79,115,150,0.04);
   }
 
   .pillar-title {
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 0.95rem;
     margin-bottom: 4px;
+    letter-spacing: -0.01em;
   }
 
   .pillar-desc {
@@ -303,10 +289,7 @@
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--muted);
-    transition: color 0.3s;
   }
-
-  .pillar:hover .pillar-desc { color: rgba(245,242,236,0.6); }
 
   /* Experience */
   .experience-list {
@@ -336,22 +319,24 @@
   }
 
   .exp-role {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     font-weight: 600;
     margin-bottom: 4px;
+    letter-spacing: -0.01em;
   }
 
   .exp-org {
+    font-family: 'Instrument Serif', serif;
     font-style: italic;
-    color: var(--warm);
-    font-size: 1.1rem;
+    color: var(--cool);
+    font-size: 1.05rem;
     margin-bottom: 12px;
   }
 
   .exp-desc {
-    font-size: 0.95rem;
+    font-size: 0.93rem;
     color: #3a3835;
-    line-height: 1.7;
+    line-height: 1.75;
   }
 
   .exp-tag {
@@ -387,26 +372,29 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 3px;
-    background: var(--warm);
+    height: 2px;
+    background: var(--cool);
     transform: scaleX(0);
     transform-origin: left;
-    transition: transform 0.4s;
+    transition: transform 0.35s;
   }
 
   .expertise-card:hover::before { transform: scaleX(1); }
-  .expertise-card:hover { background: rgba(43,58,82,0.04); }
+  .expertise-card:hover { background: rgba(79,115,150,0.04); }
 
   .expertise-icon {
-    font-size: 2rem;
+    font-size: 1.4rem;
     margin-bottom: 20px;
     display: block;
+    color: var(--cool);
+    opacity: 0.7;
   }
 
   .expertise-name {
-    font-size: 1.2rem;
+    font-size: 1.05rem;
     font-weight: 600;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
+    letter-spacing: -0.01em;
   }
 
   .expertise-text {
@@ -421,7 +409,7 @@
     color: var(--paper);
   }
 
-  #contact .section-num { color: var(--warm); }
+  #contact .section-num { color: var(--cool); }
 
   #contact h2 { color: var(--paper); }
 
@@ -460,15 +448,15 @@
   }
 
   .contact-link:hover {
-    background: rgba(245,242,236,0.08);
-    border-color: var(--warm);
+    background: rgba(245,242,236,0.07);
+    border-color: var(--cool);
     padding-left: 32px;
   }
 
   .contact-link span {
     font-family: 'DM Mono', monospace;
     font-size: 11px;
-    color: var(--warm);
+    color: var(--cool);
     letter-spacing: 0.1em;
   }
 
@@ -497,9 +485,10 @@
 
   /* Decorative rule */
   .divider {
-    width: 48px;
+    width: 32px;
     height: 1px;
-    background: var(--warm);
+    background: var(--cool);
+    opacity: 0.5;
     margin: 32px 0;
   }
 
@@ -530,11 +519,12 @@
 
   /* Photo */
   .photo-wrap {
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
+    width: 152px;
+    height: 152px;
+    border-radius: 4px;
     overflow: hidden;
-    border: 3px solid var(--warm);
+    border: none;
+    outline: 1px solid var(--rule);
     flex-shrink: 0;
     margin-bottom: 32px;
   }
