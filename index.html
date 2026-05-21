@@ -503,6 +503,49 @@
     transform: translateY(0);
   }
 
+  /* Action photo strip */
+  .action-strip {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .action-photo {
+    position: relative;
+    overflow: hidden;
+    height: 500px;
+  }
+
+  .action-photo:first-child {
+    border-right: 1px solid var(--rule);
+  }
+
+  .action-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(10%);
+    transition: transform 0.7s ease;
+  }
+
+  .action-photo:hover img {
+    transform: scale(1.04);
+  }
+
+  .action-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 24px 28px;
+    background: linear-gradient(transparent, rgba(15,15,14,0.62));
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(244,244,242,0.92);
+  }
+
   @media (max-width: 900px) {
     header { grid-template-columns: 1fr; }
     .header-left { padding: 60px 32px; border-right: none; }
@@ -515,6 +558,9 @@
     .exp-item { grid-template-columns: 1fr; gap: 8px; }
     .exp-period { padding-top: 0; }
     footer { padding: 24px 32px; }
+    .action-strip { grid-template-columns: 1fr; }
+    .action-photo { height: 320px; }
+    .action-photo:first-child { border-right: none; border-bottom: 1px solid var(--rule); }
   }
 
   /* Photo */
@@ -724,6 +770,17 @@
     </div>
   </div>
 </section>
+
+<div class="action-strip">
+  <div class="action-photo">
+    <img src="action-photo-1.jpg" alt="Morten Bilgrav Mathiasen" style="object-position: center 20%;">
+    <div class="action-caption">In dialogue</div>
+  </div>
+  <div class="action-photo">
+    <img src="action-photo-2.jpg" alt="Morten Bilgrav Mathiasen presenting at Norlys AI Conference" style="object-position: center center;">
+    <div class="action-caption">Norlys Conference · Artificial Intelligence &amp; Machine Learning</div>
+  </div>
+</div>
 
 <section id="expertise">
   <div class="section-inner">
