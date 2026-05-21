@@ -5,15 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Morten Bilgrav Mathiasen · Board Profile</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Instrument+Serif:ital@0;1&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
 <style>
   :root {
-    --ink: #0e0e0d;
-    --paper: #f5f2ec;
-    --warm: #c8a96e;
-    --muted: #8a8278;
-    --rule: rgba(14,14,13,0.12);
-    --accent: #2b3a52;
+    --ink: #0F0F0E;
+    --paper: #F4F4F2;
+    --cool: #4F7396;
+    --muted: #767672;
+    --rule: rgba(15,15,14,0.10);
+    --accent: #1A2B38;
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -23,21 +23,10 @@
   body {
     background: var(--paper);
     color: var(--ink);
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: 18px;
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    font-size: 17px;
     line-height: 1.7;
     overflow-x: hidden;
-  }
-
-  /* Grain overlay */
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
-    pointer-events: none;
-    z-index: 1000;
-    opacity: 0.4;
   }
 
   /* Header */
@@ -74,23 +63,26 @@
   .eyebrow {
     font-family: 'DM Mono', monospace;
     font-size: 11px;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--warm);
+    color: var(--cool);
     font-weight: 300;
   }
 
   h1 {
     font-size: clamp(3.5rem, 6vw, 6rem);
-    font-weight: 300;
+    font-weight: 700;
     line-height: 1.0;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.03em;
     margin-top: 24px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
   }
 
   h1 em {
+    font-family: 'Instrument Serif', serif;
     font-style: italic;
-    color: var(--warm);
+    font-weight: 400;
+    color: var(--cool);
   }
 
   .title-block {
@@ -114,11 +106,12 @@
   }
 
   .header-tagline {
-    font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+    font-family: 'Instrument Serif', serif;
+    font-size: clamp(1.1rem, 1.8vw, 1.35rem);
     font-style: italic;
-    font-weight: 300;
+    font-weight: 400;
     color: var(--muted);
-    line-height: 1.5;
+    line-height: 1.6;
     max-width: 420px;
     margin-bottom: 60px;
   }
@@ -126,32 +119,34 @@
   .header-stats {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2px;
+    gap: 1px;
+    background: var(--rule);
     border: 1px solid var(--rule);
   }
 
   .stat {
     padding: 24px 20px;
-    border: 1px solid var(--rule);
-    transition: background 0.3s;
+    background: var(--paper);
+    transition: background 0.25s;
   }
 
-  .stat:hover { background: rgba(200,169,110,0.06); }
+  .stat:hover { background: rgba(79,115,150,0.05); }
 
   .stat-num {
-    font-size: 2.4rem;
-    font-weight: 300;
+    font-size: 2.2rem;
+    font-weight: 600;
     line-height: 1;
     color: var(--accent);
+    letter-spacing: -0.02em;
   }
 
   .stat-label {
     font-family: 'DM Mono', monospace;
     font-size: 10px;
     text-transform: uppercase;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.13em;
     color: var(--muted);
-    margin-top: 4px;
+    margin-top: 5px;
   }
 
   /* Nav */
@@ -194,7 +189,7 @@
     font-size: 11px;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--ink);
+    color: var(--muted);
     text-decoration: none;
     position: relative;
     transition: color 0.2s;
@@ -207,11 +202,11 @@
     left: 0;
     width: 0;
     height: 1px;
-    background: var(--warm);
+    background: var(--cool);
     transition: width 0.3s;
   }
 
-  .nav-links a:hover { color: var(--warm); }
+  .nav-links a:hover { color: var(--ink); }
   .nav-links a:hover::after { width: 100%; }
 
   /* Sections */
@@ -235,14 +230,14 @@
   .section-num {
     font-family: 'DM Mono', monospace;
     font-size: 11px;
-    color: var(--warm);
+    color: var(--cool);
     letter-spacing: 0.15em;
   }
 
   h2 {
-    font-size: clamp(2rem, 3.5vw, 3rem);
-    font-weight: 300;
-    letter-spacing: -0.02em;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 600;
+    letter-spacing: -0.025em;
     line-height: 1.1;
   }
 
@@ -261,15 +256,6 @@
     margin-bottom: 24px;
   }
 
-  .about-text p:first-child::first-letter {
-    font-size: 4rem;
-    line-height: 0.8;
-    float: left;
-    margin-right: 10px;
-    margin-top: 8px;
-    color: var(--warm);
-    font-style: italic;
-  }
 
   .pillars {
     display: flex;
@@ -279,22 +265,22 @@
 
   .pillar {
     border: 1px solid var(--rule);
-    padding: 20px 24px;
-    transition: all 0.3s;
+    border-left: 3px solid transparent;
+    padding: 18px 24px;
+    transition: border-left-color 0.25s, background 0.25s;
     cursor: default;
   }
 
   .pillar:hover {
-    background: var(--accent);
-    color: var(--paper);
-    border-color: var(--accent);
-    transform: translateX(8px);
+    border-left-color: var(--cool);
+    background: rgba(79,115,150,0.04);
   }
 
   .pillar-title {
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 0.95rem;
     margin-bottom: 4px;
+    letter-spacing: -0.01em;
   }
 
   .pillar-desc {
@@ -303,10 +289,7 @@
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--muted);
-    transition: color 0.3s;
   }
-
-  .pillar:hover .pillar-desc { color: rgba(245,242,236,0.6); }
 
   /* Experience */
   .experience-list {
@@ -336,22 +319,24 @@
   }
 
   .exp-role {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     font-weight: 600;
     margin-bottom: 4px;
+    letter-spacing: -0.01em;
   }
 
   .exp-org {
+    font-family: 'Instrument Serif', serif;
     font-style: italic;
-    color: var(--warm);
-    font-size: 1.1rem;
+    color: var(--cool);
+    font-size: 1.05rem;
     margin-bottom: 12px;
   }
 
   .exp-desc {
-    font-size: 0.95rem;
+    font-size: 0.93rem;
     color: #3a3835;
-    line-height: 1.7;
+    line-height: 1.75;
   }
 
   .exp-tag {
@@ -387,26 +372,29 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 3px;
-    background: var(--warm);
+    height: 2px;
+    background: var(--cool);
     transform: scaleX(0);
     transform-origin: left;
-    transition: transform 0.4s;
+    transition: transform 0.35s;
   }
 
   .expertise-card:hover::before { transform: scaleX(1); }
-  .expertise-card:hover { background: rgba(43,58,82,0.04); }
+  .expertise-card:hover { background: rgba(79,115,150,0.04); }
 
   .expertise-icon {
-    font-size: 2rem;
+    font-size: 1.4rem;
     margin-bottom: 20px;
     display: block;
+    color: var(--cool);
+    opacity: 0.7;
   }
 
   .expertise-name {
-    font-size: 1.2rem;
+    font-size: 1.05rem;
     font-weight: 600;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
+    letter-spacing: -0.01em;
   }
 
   .expertise-text {
@@ -421,7 +409,7 @@
     color: var(--paper);
   }
 
-  #contact .section-num { color: var(--warm); }
+  #contact .section-num { color: var(--cool); }
 
   #contact h2 { color: var(--paper); }
 
@@ -460,15 +448,15 @@
   }
 
   .contact-link:hover {
-    background: rgba(245,242,236,0.08);
-    border-color: var(--warm);
+    background: rgba(245,242,236,0.07);
+    border-color: var(--cool);
     padding-left: 32px;
   }
 
   .contact-link span {
     font-family: 'DM Mono', monospace;
     font-size: 11px;
-    color: var(--warm);
+    color: var(--cool);
     letter-spacing: 0.1em;
   }
 
@@ -497,9 +485,10 @@
 
   /* Decorative rule */
   .divider {
-    width: 48px;
+    width: 32px;
     height: 1px;
-    background: var(--warm);
+    background: var(--cool);
+    opacity: 0.5;
     margin: 32px 0;
   }
 
@@ -530,11 +519,12 @@
 
   /* Photo */
   .photo-wrap {
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
+    width: 152px;
+    height: 152px;
+    border-radius: 4px;
     overflow: hidden;
-    border: 3px solid var(--warm);
+    border: none;
+    outline: 1px solid var(--rule);
     flex-shrink: 0;
     margin-bottom: 32px;
   }
@@ -552,7 +542,7 @@
 
 <header>
   <div class="header-left">
-<div class="photo-wrap"><img src="profile.jpg" alt="Morten Bilgrav Mathiasen"></div>
+<div class="photo-wrap"><img src="data:image/jpeg;base64,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" alt="Morten Bilgrav Mathiasen"></div>
     <div>
       <div class="eyebrow">Board Profile · Skanderborg, Denmark</div>
       <h1>Morten<br><em>Bilgrav</em><br>Mathiasen</h1>
@@ -586,7 +576,7 @@
 </header>
 
 <nav>
-  <div class="nav-name">Morten Bilgrav Mathiasen</div>
+  <div class="nav-name">M. Bilgrav Mathiasen</div>
   <ul class="nav-links">
     <li><a href="#about">Profile</a></li>
     <li><a href="#experience">Experience</a></li>
@@ -613,12 +603,12 @@
       <div class="reveal">
         <div class="pillars">
           <div class="pillar">
-            <div class="pillar-title">Digital Transformation</div>
-            <div class="pillar-desc">Strategy, execution & value creation</div>
-          </div>
-          <div class="pillar">
             <div class="pillar-title">Technology & Digital Risk</div>
             <div class="pillar-desc">Cyber, resilience & governance oversight</div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-title">Digital Transformation</div>
+            <div class="pillar-desc">Strategy, execution & value creation</div>
           </div>
           <div class="pillar">
             <div class="pillar-title">AI Governance</div>
