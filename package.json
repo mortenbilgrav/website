@@ -1,0 +1,14 @@
+{
+  "name": "mortenbilgrav-website",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "preview": "npx serve dist -l 4173",
+    "check": "node scripts/build.mjs >/dev/null && echo 'Build OK'"
+  },
+  "devDependencies": {
+    "html-minifier-terser": "^7.0.0",
+    "serve": "^14.2.1"
+  }
+}
